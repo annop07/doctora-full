@@ -6,18 +6,15 @@ CREATE TABLE IF NOT EXISTS patient_booking_info (
     patient_prefix VARCHAR(20),
     patient_first_name VARCHAR(100),
     patient_last_name VARCHAR(100),
-    patient_email VARCHAR(255),
+    patient_gender VARCHAR(20),
+    patient_date_of_birth DATE,
+    patient_nationality VARCHAR(50),
+    patient_citizen_id VARCHAR(13),
     patient_phone VARCHAR(20),
-    patient_id_card VARCHAR(20),
-    patient_birth_date DATE,
-    patient_gender VARCHAR(10),
-    patient_address TEXT,
-    patient_emergency_contact VARCHAR(100),
-    patient_emergency_phone VARCHAR(20),
-    reason_for_visit TEXT,
-    medical_history TEXT,
-    allergies TEXT,
-    current_medications TEXT,
+    patient_email VARCHAR(255),
+    symptoms TEXT,
+    booking_type VARCHAR(20),
+    queue_number VARCHAR(10),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT fk_patient_booking_info_appointment
@@ -28,4 +25,4 @@ CREATE TABLE IF NOT EXISTS patient_booking_info (
 
 CREATE INDEX idx_patient_booking_info_appointment ON patient_booking_info(appointment_id);
 CREATE INDEX idx_patient_booking_info_email ON patient_booking_info(patient_email);
-CREATE INDEX idx_patient_booking_info_id_card ON patient_booking_info(patient_id_card);
+CREATE INDEX idx_patient_booking_info_citizen_id ON patient_booking_info(patient_citizen_id);
