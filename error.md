@@ -1,7 +1,3 @@
-﻿[1] Java heap space
+﻿ERROR: process "/bin/sh -c npm run build" did not complete successfully: exit code: 1
 
-[2] Error creating bean with name 'doctorRepository'
-
-[3] Error creating bean with name 'doctorService'
-
-[4] Error creating bean with name 'adminController'
+error: failed to solve: process "/bin/sh -c npm run build" did not complete successfully: exit code: 1

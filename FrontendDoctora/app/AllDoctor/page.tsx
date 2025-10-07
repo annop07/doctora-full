@@ -6,6 +6,9 @@ import { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Search, Filter, Calendar as CalendarIcon, Clock, User, Stethoscope, Building, CheckCircle, Sun, Settings, RotateCcw, ArrowLeft, ArrowRight, Sunset } from "lucide-react";
 
+// Force dynamic rendering to avoid useSearchParams() prerender issues
+export const dynamic = 'force-dynamic';
+
 // Types for backend integration
 interface Doctor {
   id: number;

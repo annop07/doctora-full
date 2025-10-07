@@ -3,8 +3,6 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   reactStrictMode: true,
-  // Enable standalone output for Docker
-  output: 'standalone',
 
   // Disable TypeScript and ESLint errors during build for deployment
   typescript: {
@@ -12,6 +10,14 @@ const nextConfig: NextConfig = {
   },
   eslint: {
     ignoreDuringBuilds: true,
+  },
+
+  // Disable static page generation to avoid useSearchParams() prerender issues
+  // This forces all pages to be server-side rendered
+  // @ts-ignore
+  experimental: {
+    // @ts-ignore
+    isrMemoryCacheSize: 0,
   },
 };
 

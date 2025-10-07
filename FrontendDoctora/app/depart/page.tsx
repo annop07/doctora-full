@@ -5,6 +5,9 @@ import { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Stethoscope, ArrowRight, ArrowLeft, Heart, Activity, Brain, Zap, Baby, UserCheck, Scissors, Shield, Waves, Bone, HeartHandshake, Users, Ear, Sparkles, HeartPulse, User, Radiation } from "lucide-react";
 
+// Force dynamic rendering to avoid useSearchParams() prerender issues
+export const dynamic = 'force-dynamic';
+
 // Interface for backend specialty data
 interface Specialty {
   id: number;

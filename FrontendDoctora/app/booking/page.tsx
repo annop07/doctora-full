@@ -2,11 +2,14 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState, useRef } from "react"; 
+import { useEffect, useState, useRef } from "react";
 import { Slot } from "@radix-ui/react-slot"
 import Schedule from "@/components/Schedule";
 import { useRouter } from "next/navigation";
 import { Clock, Calendar, FileText, ArrowLeft, ArrowRight, Stethoscope, User } from "lucide-react";
+
+// Force dynamic rendering to avoid useSearchParams() prerender issues
+export const dynamic = 'force-dynamic';
 
 const DRAFT_KEY = "bookingDraft";
 
