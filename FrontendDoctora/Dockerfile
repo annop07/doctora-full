@@ -25,8 +25,13 @@ COPY --from=deps /app/node_modules ./node_modules
 # Copy all files
 COPY . .
 
+# Accept build arguments
+ARG NEXT_PUBLIC_API_URL=https://doctora-backend.onrender.com
+ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
+
 # Set environment variable for build
 ENV NEXT_TELEMETRY_DISABLED=1
+ENV NODE_ENV=production
 
 # Build Next.js application
 RUN npm run build
